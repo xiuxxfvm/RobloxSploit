@@ -141,7 +141,7 @@ local function createButton(name, position, action)
 end
 
 -- 🌟 Buttons & Functions 🌟 --
-createButton("🚀 Speed", 50, function() loadScript(loadstring(game:HttpGet("https://pastebin.com/raw/afGG6P7A"))()
+createButton("🚀 Speed", 50, function()
 end)
 createButton("👀 ESP", 100, function() 
     createPopup("ESP", "Highlight players in the game!")
