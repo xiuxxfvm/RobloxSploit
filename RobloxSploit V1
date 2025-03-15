@@ -1,170 +1,246 @@
-local player = game.Players.LocalPlayer
-local playerGui = player:FindFirstChild("PlayerGui")
+local Converted = {
+	["_ScreenGui"] = Instance.new("ScreenGui");
+	["_Frame"] = Instance.new("Frame");
+	["_name"] = Instance.new("TextLabel");
+	["_TextLabel"] = Instance.new("TextLabel");
+	["_esp"] = Instance.new("TextButton");
+	["_LocalScript"] = Instance.new("LocalScript");
+	["_spectate"] = Instance.new("TextButton");
+	["_LocalScript1"] = Instance.new("LocalScript");
+	["_fly"] = Instance.new("TextButton");
+	["_LocalScript2"] = Instance.new("LocalScript");
+	["_touch fling"] = Instance.new("TextButton");
+	["_LocalScript3"] = Instance.new("LocalScript");
+	["_UICorner"] = Instance.new("UICorner");
+	["_UIStroke"] = Instance.new("UIStroke");
+	["_Holding"] = Instance.new("BoolValue");
+	["_LocalScript4"] = Instance.new("LocalScript");
+}
 
-if not playerGui then
-    warn("PlayerGui not found!")
-    return
+-- Properties:
+
+Converted["_ScreenGui"].ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Converted["_ScreenGui"].Parent = game:GetService("CoreGui")
+
+Converted["_Frame"].BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_Frame"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_Frame"].BorderSizePixel = 0
+Converted["_Frame"].Position = UDim2.new(0.0408625342, 0, 0.0773434341, 0)
+Converted["_Frame"].Size = UDim2.new(0, 413, 0, 308)
+Converted["_Frame"].Parent = Converted["_ScreenGui"]
+
+Converted["_name"].Font = Enum.Font.LuckiestGuy
+Converted["_name"].Text = "RobloxSploit HUB V1"
+Converted["_name"].TextColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_name"].TextScaled = true
+Converted["_name"].TextSize = 14
+Converted["_name"].TextWrapped = true
+Converted["_name"].BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Converted["_name"].BorderColor3 = Color3.fromRGB(255, 0, 0)
+Converted["_name"].BorderSizePixel = 0
+Converted["_name"].Size = UDim2.new(0, 289, 0, 50)
+Converted["_name"].Name = "name"
+Converted["_name"].Parent = Converted["_Frame"]
+
+Converted["_TextLabel"].Font = Enum.Font.SourceSans
+Converted["_TextLabel"].Text = "https://discord.gg/t7KhunDf8H"
+Converted["_TextLabel"].TextColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_TextLabel"].TextScaled = true
+Converted["_TextLabel"].TextSize = 14
+Converted["_TextLabel"].TextWrapped = true
+Converted["_TextLabel"].BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Converted["_TextLabel"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_TextLabel"].BorderSizePixel = 0
+Converted["_TextLabel"].Position = UDim2.new(0, 0, 0.837662339, 0)
+Converted["_TextLabel"].Size = UDim2.new(0, 201, 0, 50)
+Converted["_TextLabel"].Parent = Converted["_Frame"]
+
+Converted["_esp"].Font = Enum.Font.SourceSans
+Converted["_esp"].Text = "ESP"
+Converted["_esp"].TextColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_esp"].TextScaled = true
+Converted["_esp"].TextSize = 14
+Converted["_esp"].TextWrapped = true
+Converted["_esp"].BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Converted["_esp"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_esp"].BorderSizePixel = 0
+Converted["_esp"].Position = UDim2.new(0, 0, 0.191558436, 0)
+Converted["_esp"].Size = UDim2.new(0, 162, 0, 34)
+Converted["_esp"].Name = "esp"
+Converted["_esp"].Parent = Converted["_Frame"]
+
+Converted["_spectate"].Font = Enum.Font.SourceSans
+Converted["_spectate"].Text = "SPECTATE"
+Converted["_spectate"].TextColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_spectate"].TextScaled = true
+Converted["_spectate"].TextSize = 14
+Converted["_spectate"].TextWrapped = true
+Converted["_spectate"].BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Converted["_spectate"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_spectate"].BorderSizePixel = 0
+Converted["_spectate"].Position = UDim2.new(0, 0, 0.350649357, 0)
+Converted["_spectate"].Size = UDim2.new(0, 162, 0, 34)
+Converted["_spectate"].Name = "spectate"
+Converted["_spectate"].Parent = Converted["_Frame"]
+
+Converted["_fly"].Font = Enum.Font.SourceSans
+Converted["_fly"].Text = "FLY (PRESS P TO ENABLE)"
+Converted["_fly"].TextColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_fly"].TextScaled = true
+Converted["_fly"].TextSize = 14
+Converted["_fly"].TextWrapped = true
+Converted["_fly"].BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Converted["_fly"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_fly"].BorderSizePixel = 0
+Converted["_fly"].Position = UDim2.new(0, 0, 0.516233742, 0)
+Converted["_fly"].Size = UDim2.new(0, 162, 0, 34)
+Converted["_fly"].Name = "fly"
+Converted["_fly"].Parent = Converted["_Frame"]
+
+Converted["_touch fling"].Font = Enum.Font.SourceSans
+Converted["_touch fling"].Text = "TOUCH FLING"
+Converted["_touch fling"].TextColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_touch fling"].TextScaled = true
+Converted["_touch fling"].TextSize = 14
+Converted["_touch fling"].TextWrapped = true
+Converted["_touch fling"].BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Converted["_touch fling"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_touch fling"].BorderSizePixel = 0
+Converted["_touch fling"].Position = UDim2.new(0, 0, 0.672077894, 0)
+Converted["_touch fling"].Size = UDim2.new(0, 162, 0, 34)
+Converted["_touch fling"].Name = "touch fling"
+Converted["_touch fling"].Parent = Converted["_Frame"]
+
+Converted["_UICorner"].Parent = Converted["_Frame"]
+
+Converted["_UIStroke"].Thickness = 10
+Converted["_UIStroke"].Parent = Converted["_Frame"]
+
+Converted["_Holding"].Name = "Holding"
+Converted["_Holding"].Parent = Converted["_ScreenGui"]
+
+-- Fake Module Scripts:
+
+local fake_module_scripts = {}
+
+
+-- Fake Local Scripts:
+
+local function OVVKU_fake_script() -- Fake Script: StarterGui.ScreenGui.Frame.esp.LocalScript
+    local script = Instance.new("LocalScript")
+    script.Name = "LocalScript"
+    script.Parent = Converted["_esp"]
+    local req = require
+    local require = function(obj)
+        local fake = fake_module_scripts[obj]
+        if fake then
+            return fake()
+        end
+        return req(obj)
+    end
+
+	local button = script.Parent
+	
+	button.MouseButton1Click:Connect(function()
+		loadstring(game:HttpGet(('https://raw.githubusercontent.com/xiuxxfvm/esp/refs/heads/main/esp'),true))()
+	end)
+	
+	
+end
+local function JMNUYAN_fake_script() -- Fake Script: StarterGui.ScreenGui.Frame.spectate.LocalScript
+    local script = Instance.new("LocalScript")
+    script.Name = "LocalScript"
+    script.Parent = Converted["_spectate"]
+    local req = require
+    local require = function(obj)
+        local fake = fake_module_scripts[obj]
+        if fake then
+            return fake()
+        end
+        return req(obj)
+    end
+
+	local button = script.Parent
+	
+	button.MouseButton1Click:Connect(function()
+		loadstring(game:HttpGet(('https://raw.githubusercontent.com/xiuxxfvm/spectate-script/refs/heads/main/spectator%20script'),true))()
+	end)
+	
+	
+end
+local function QHKO_fake_script() -- Fake Script: StarterGui.ScreenGui.Frame.fly.LocalScript
+    local script = Instance.new("LocalScript")
+    script.Name = "LocalScript"
+    script.Parent = Converted["_fly"]
+    local req = require
+    local require = function(obj)
+        local fake = fake_module_scripts[obj]
+        if fake then
+            return fake()
+        end
+        return req(obj)
+    end
+
+	local button = script.Parent
+	
+	button.MouseButton1Click:Connect(function()
+		loadstring(game:HttpGet(('https://raw.githubusercontent.com/xiuxxfvm/fly/refs/heads/main/fly'),true))()
+	end)
+	
+end
+local function VXTHKON_fake_script() -- Fake Script: StarterGui.ScreenGui.Frame.touch fling.LocalScript
+    local script = Instance.new("LocalScript")
+    script.Name = "LocalScript"
+    script.Parent = Converted["_touch fling"]
+    local req = require
+    local require = function(obj)
+        local fake = fake_module_scripts[obj]
+        if fake then
+            return fake()
+        end
+        return req(obj)
+    end
+
+	local button = script.Parent
+	
+	button.MouseButton1Click:Connect(function()
+		loadstring(game:HttpGet(('https://raw.githubusercontent.com/xiuxxfvm/touch-fling/refs/heads/main/toch%20fling'),true))()
+	end)
+	
+end
+local function KGGY_fake_script() -- Fake Script: StarterGui.ScreenGui.LocalScript
+    local script = Instance.new("LocalScript")
+    script.Name = "LocalScript"
+    script.Parent = Converted["_ScreenGui"]
+    local req = require
+    local require = function(obj)
+        local fake = fake_module_scripts[obj]
+        if fake then
+            return fake()
+        end
+        return req(obj)
+    end
+
+	local player = game.Players.LocalPlayer
+	local mouse = player:GetMouse()
+	
+	mouse.Button1Down:Connect(function()
+		script.Parent.Holding.Value = true
+	end)
+	
+	mouse.Button1Up:Connect(function()
+		script.Parent.Holding.Value = false
+	end)
+	
+	mouse.Move:Connect(function()
+		if script.Parent.Holding.Value == true then
+			script.Parent.Frame.Position = UDim2.new(0,mouse.X,0,mouse.Y) -- Change "Frame" to your frame name
+		end
+	end)
 end
 
--- 🌟 Create Main GUI 🌟 --
-local ScreenGui = Instance.new("ScreenGui")
-ScreenGui.Parent = playerGui
-
-local MainFrame = Instance.new("Frame")
-MainFrame.Parent = ScreenGui
-MainFrame.Size = UDim2.new(0, 220, 0, 530) -- Increased height for proper spacing
-MainFrame.Position = UDim2.new(0, 20, 0.5, -265) 
-MainFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-MainFrame.BackgroundTransparency = 0.2
-
-local UICorner = Instance.new("UICorner")
-UICorner.Parent = MainFrame
-UICorner.CornerRadius = UDim.new(0, 15)
-
-local UIStroke = Instance.new("UIStroke")
-UIStroke.Parent = MainFrame
-UIStroke.Color = Color3.fromRGB(120, 120, 120)
-UIStroke.Thickness = 3
-
--- ✖ Close Button ✖ --
-local CloseButton = Instance.new("TextButton")
-CloseButton.Parent = MainFrame
-CloseButton.Size = UDim2.new(0, 30, 0, 30)
-CloseButton.Position = UDim2.new(1, -35, 0, 5)
-CloseButton.Text = "✖"
-CloseButton.TextColor3 = Color3.fromRGB(255, 0, 0)
-CloseButton.BackgroundTransparency = 1
-CloseButton.Font = Enum.Font.GothamBold
-CloseButton.TextSize = 18
-
-CloseButton.MouseButton1Click:Connect(function()
-    MainFrame.Visible = false
-end)
-
--- 🌟 Create Warning Frame (Properly Positioned) 🌟 --
-local WarningFrame = Instance.new("Frame")
-WarningFrame.Parent = MainFrame
-WarningFrame.Size = UDim2.new(1, -20, 0, 60)
-WarningFrame.Position = UDim2.new(0, 10, 1, -80) -- Fixed overlap issue
-WarningFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-WarningFrame.BackgroundTransparency = 0.3
-
-local WarningCorner = Instance.new("UICorner")
-WarningCorner.Parent = WarningFrame
-WarningCorner.CornerRadius = UDim.new(0, 10)
-
-local WarningGlow = Instance.new("UIStroke")
-WarningGlow.Parent = WarningFrame
-WarningGlow.Color = Color3.fromRGB(255, 0, 0)
-WarningGlow.Thickness = 2
-
-local WarningText = Instance.new("TextLabel")
-WarningText.Parent = WarningFrame
-WarningText.Size = UDim2.new(1, -10, 1, -10)
-WarningText.Position = UDim2.new(0, 5, 0, 5)
-WarningText.Text = "⚠️ USE THIS AT YOUR OWN RISK!"
-WarningText.TextColor3 = Color3.fromRGB(255, 0, 0)
-WarningText.Font = Enum.Font.GothamBold
-WarningText.TextSize = 14
-WarningText.BackgroundTransparency = 1
-
-local CreditText = Instance.new("TextLabel")
-CreditText.Parent = WarningFrame
-CreditText.Size = UDim2.new(1, -10, 1, -30)
-CreditText.Position = UDim2.new(0, 5, 0, 25)
-CreditText.Text = "MADE BY ROBLOXSPLIOT (BETA)"
-CreditText.TextColor3 = Color3.fromRGB(255, 255, 255)
-CreditText.Font = Enum.Font.Gotham
-CreditText.TextSize = 12
-CreditText.BackgroundTransparency = 1
-
--- 🌟 Function to Create Pop-ups 🌟 --
-local function createPopup(title, description)
-    local Popup = Instance.new("Frame")
-    Popup.Parent = ScreenGui
-    Popup.Size = UDim2.new(0, 300, 0, 200)
-    Popup.Position = UDim2.new(0.5, -150, 0.5, -100)
-    Popup.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-    Popup.BackgroundTransparency = 0.2
-
-    local PopupCorner = Instance.new("UICorner")
-    PopupCorner.Parent = Popup
-    PopupCorner.CornerRadius = UDim.new(0, 15)
-
-    local PopupGlow = Instance.new("UIStroke")
-    PopupGlow.Parent = Popup
-    PopupGlow.Color = Color3.fromRGB(120, 120, 120)
-    PopupGlow.Thickness = 3
-
-    local Title = Instance.new("TextLabel")
-    Title.Parent = Popup
-    Title.Size = UDim2.new(1, -20, 0, 40)
-    Title.Position = UDim2.new(0, 10, 0, 10)
-    Title.Text = title
-    Title.TextColor3 = Color3.fromRGB(255, 255, 255)
-    Title.Font = Enum.Font.GothamBold
-    Title.TextSize = 18
-    Title.BackgroundTransparency = 1
-
-    local CloseButton = Instance.new("TextButton")
-    CloseButton.Parent = Popup
-    CloseButton.Size = UDim2.new(0, 100, 0, 30)
-    CloseButton.Position = UDim2.new(0.5, -50, 1, -40)
-    CloseButton.Text = "✖ Close"
-    CloseButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-    CloseButton.TextColor3 = Color3.fromRGB(200, 0, 0)
-    CloseButton.Font = Enum.Font.GothamBold
-    CloseButton.TextSize = 16
-
-    local CloseCorner = Instance.new("UICorner")
-    CloseCorner.Parent = CloseButton
-    CloseCorner.CornerRadius = UDim.new(0, 10)
-
-    CloseButton.MouseButton1Click:Connect(function()
-        Popup:Destroy()
-    end)
-end
-
--- 🌟 Function to Create Buttons 🌟 --
-local function createButton(name, position, action)
-    local Button = Instance.new("TextButton")
-    Button.Parent = MainFrame
-    Button.Size = UDim2.new(0, 180, 0, 40)
-    Button.Position = UDim2.new(0, 10, 0, position)
-    Button.Text = name
-    Button.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-    Button.TextColor3 = Color3.fromRGB(255, 255, 255)
-    Button.Font = Enum.Font.Gotham
-    Button.TextSize = 14
-
-    Button.MouseButton1Click:Connect(action)
-end
-
--- 🌟 Buttons & Functions 🌟 --
-createButton("🚀 Fly", 50, function() createPopup("PRESS P TO FLY")
-and (loadstring(game:HttpGet("https://raw.githubusercontent.com/xiuxxfvm/fly/refs/heads/main/fly"))())
-
-end) 
-createButton("👀 ESP", 100, function() 
-    createPopup("ESP", "Highlight players in the game!")
-end)
-createButton("🔑 Admin Panel", 150, function() 
-    createPopup("Admin Panel", "🚨 Admin tools coming soon!")
-end)
-createButton("🎭 Troll", 200, function() 
-    createPopup("Troll Menu", "😂 Funny troll scripts coming soon!")
-end)
-createButton("📍 Teleport", 250, function() 
-    createPopup("Teleport", "Teleport anywhere in the game!")
-end)
-createButton("🔄 Spin", 300, function() 
-    createPopup("Spin Mode", "Make your character spin!")
-end)
-createButton("🎭 Emotes", 350, function() 
-    createPopup("Emotes", "Play cool animations!")
-end)
-createButton("🛠 Tools", 400, function() 
-    createPopup("Tools", "Give yourself useful items!")
-end)
-
--- ✅ Everything is spaced correctly, and now the warning frame does NOT overlap!
+coroutine.wrap(OVVKU_fake_script)()
+coroutine.wrap(JMNUYAN_fake_script)()
+coroutine.wrap(QHKO_fake_script)()
+coroutine.wrap(VXTHKON_fake_script)()
+coroutine.wrap(KGGY_fake_script)()
