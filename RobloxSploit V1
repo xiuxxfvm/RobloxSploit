@@ -142,7 +142,7 @@ end
 
 -- 🌟 Buttons & Functions 🌟 --
 createButton("🚀 Speed", 50, function() 
-    createPopup("Speed Settings", "⚡ Adjust your speed settings here!")
+    createPopup("Speed Settings", "")
 end)
 createButton("👀 ESP", 100, function() 
     createPopup("ESP", "Highlight players in the game!")
