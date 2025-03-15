@@ -141,8 +141,10 @@ local function createButton(name, position, action)
 end
 
 -- 🌟 Buttons & Functions 🌟 --
-createButton("🚀 Speed", 50, function()
-end)
+createButton("🚀 Fly", 50, function() createPopup("PRESS P TO FLY")
+and (loadstring(game:HttpGet("https://raw.githubusercontent.com/xiuxxfvm/fly/refs/heads/main/fly"))())
+
+end) 
 createButton("👀 ESP", 100, function() 
     createPopup("ESP", "Highlight players in the game!")
 end)
